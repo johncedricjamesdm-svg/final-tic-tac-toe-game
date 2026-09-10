@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Clash</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Music -->
+    <div class="music-player">
+        <button id="musicToggle" class="music-toggle">🔊 Music: ON</button>
+    </div>
+
+    <!-- Home Page -->
+    <div id="homePage" class="container">
+        <div class="home-content">
+            <h1>Tic Tac Clash</h1>
+            <p>Enter player names to start the game</p>
+            
+            <div class="form-group">
+                <label for="player1Name">Player 1 Name (X):</label>
+                <input type="text" id="player1Name" placeholder="Enter Player 1 name" value="Player 1">
+            </div>
+            
+            <div class="form-group">
+                <label for="player2Name">Player 2 Name (O):</label>
+                <input type="text" id="player2Name" placeholder="Enter Player 2 name" value="Player 2">
+            </div>
+            
+            <button id="startBtn" class="start-btn">Start Game</button>
+        </div>
+    </div>
+
+    <!-- Game Page -->
+    <div id="gamePage" class="container hidden">
+        <div class="game-content">
+            <div class="game-header">
+                <h1>Tic Tac Clash</h1>
+                <div class="player-info">
+                    <span id="currentPlayer"></span>
+                </div>
+            </div>
+            
+            <div class="game-board">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+            
+            <button id="resetBtn" class="reset-btn">New Game</button>
+            <button id="homeBtn" class="home-btn">Back to Home</button>
+        </div>
+    </div>
+
+    <!-- Win Popup -->
+    <div id="winPopup" class="popup hidden">
+        <div class="popup-content">
+            <h2>🎉 Game Won!</h2>
+            <p id="winMessage"></p>
+            <div class="popup-buttons">
+                <button id="playAgainBtn" class="btn-primary">Play Again</button>
+                <button id="homeFromWinBtn" class="btn-secondary">Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lose/Dare Popup -->
+    <div id="losePopup" class="popup hidden">
+        <div class="popup-content lose-content">
+            <h2>😅 You Lost! Time for a Dare!</h2>
+            <p id="loserMessage"></p>
+            <div class="dare-container">
+                <h3>Your Dare:</h3>
+                <p id="dareText" class="dare-text"></p>
+                <button id="generateDareBtn" class="dare-btn">Get Another Dare</button>
+            </div>
+            <div class="popup-buttons">
+                <button id="playAgainLoseBtn" class="btn-primary">Play Again</button>
+                <button id="homeFromLoseBtn" class="btn-secondary">Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Draw Popup -->
+    <div id="drawPopup" class="popup hidden">
+        <div class="popup-content">
+            <h2>🤝 It's a Draw!</h2>
+            <p>No one won this round. Try again!</p>
+            <div class="popup-buttons">
+                <button id="playAgainDrawBtn" class="btn-primary">Play Again</button>
+                <button id="homeFromDrawBtn" class="btn-secondary">Home</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="java.js"></script>
+</body>
+</html>
